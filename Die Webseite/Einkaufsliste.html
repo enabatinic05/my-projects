@@ -1,0 +1,151 @@
+<html>
+  <head>
+    <title>Einkaufsliste</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <style>
+
+      body {
+  font-family: Double Struck, sans-serif;
+  background-color: #CD5C5C;
+  font-size: 25px;
+}
+input {
+  font-size: 15px;
+  border: 2px solid #FFFAF0;
+  background-color:#CD5C5C ;
+}
+input:hover {
+  background-color: #FFFAF0;
+}
+h1 {
+  font-size: 42px;
+}
+#eingabe:hover{
+  background-color:#CD5C5C ;
+}
+#box {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border: 5px double #FFFAF0 ;
+  height: 670px;
+  width: 500px;
+  padding: 30px;
+  text-align: center;
+}
+i.fas {color:#;}
+.dropbtn {
+  background-color:#CD5C5C ;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+}
+.dropdown-content input:hover {
+  background-color: #CD5C5C;
+}
+/* Links inside the dropdown */
+.dropdown-content input {
+  background-color: #;
+  width: 150px;
+  color: black;
+  padding: 4px 9px;
+  text-decoration: none;
+  display: block;
+  font-size: 15px;
+  border-bottom: none;
+}
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+
+    <script>
+      var liste = [];
+function ausgabe(){
+      var ausgabeText = "<b>Deine Liste: </b><br><br>";
+        for (i=0;i<[liste.length];i++) {
+          ausgabeText += i+1+". "+liste[i] + "<br>";
+          document.getElementById("ausgabe").innerHTML = ausgabeText;
+        }
+  }
+function hinzufuegen() {
+  var element = document.getElementById("eingabe").value;
+  liste[liste.length] = element;
+  ausgabe();
+}
+function sortieren() {
+  liste.sort();
+  ausgabe();
+}
+function vertauschen(p, k){
+  var help = liste[p];
+  liste[p] = liste[k];
+  liste[k] = help;
+}
+function selectionsort(){
+  for (var i=0; i<liste.length; i++){
+      var min = i;
+      for (var j=min; j<liste.length; j++){
+        if(liste[min] > liste[j]){
+          min=j;
+        }
+      }
+  vertauschen(min, i);
+  }
+  ausgabe();
+}
+function bubblesort(){
+    var vertauscht= true;
+      while (vertauscht){
+      vertauscht=false;
+      for (i=0; i < liste.length-1; i++){
+        if (liste[i]>liste[i+1]){
+        vertauschen(i, i+1);
+          vertauscht= true;
+        }
+      }
+    }
+  ausgabe();
+}
+function mischen() {
+  for (i=0; i < liste.length-1; i++){
+    var j = Math.floor(Math.random()*(i+1));
+    vertauschen(i, j);
+  }
+  ausgabe();
+}
+</script>
+
+  </head>
+  <body>
+    <div id="box">
+      <h1>Einkaufsliste</h1>
+      <input type="text" id="eingabe" placeholder="Neues Element">
+      <input type="button" value="Hinzufügen" onclick="hinzufuegen()"><br><br>
+      <input type="button" value="Sortieren" onclick="sortieren()">
+      <div class="dropdown">
+        <button class="dropbtn"><i class="fas fa-sort-down"></i></button>
+        <div class="dropdown-content">
+          <input type="button" value="SelectionSort" onclick="selectionsort()">
+          <input type="button" value="BubbleSort" onclick="bubblesort()">
+          <input type="button" value="Mischen" onclick="mischen()" style="border:3px solid #4d6600;">
+        </div>
+      </div> <br>
+      <p id="ausgabe"></p>
+    </div>
+  </body>
+</html>

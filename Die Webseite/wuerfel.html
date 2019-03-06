@@ -1,0 +1,61 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Würfelsimultion</title>
+
+<script>
+
+function wuerfeln () {
+  var ausgabeText = "Ausgabe:<br>" ;
+  var anzahlSechser = 0 ;
+  var anzahlVersuche = parseInt (document.getElementById("eingabe").value) ;
+  for (var i = 1; i < 1000; i += 1) {
+  var wert = Math.random()*6 + 0.5 ;
+  wert = Math.round (wert) ; 
+  if (wert == 6 ) {
+     anzahlSechser += 1 ;
+	
+  }
+  }
+  
+  ausgabeText += "Du hast " + anzahlSechser + " einen 6er gewürfelt!(" + anzahlSechser/anzahlVersuche*100 + " %)";
+  
+  document.getElementById("ausgabe").innerHTML = ausgabeText ; 
+  
+  
+ }
+
+
+
+</script>
+</head>
+
+
+
+
+<body>
+
+<h1>Würfelsimultion</h1>
+
+ Anzahl der Würfe: <input type="text" id="eingabe"><br>
+ 
+<input type="button" value="Jetzt würfeln" onclick="wuerfeln()">
+
+<p id ="ausgabe"></p>
+ 
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

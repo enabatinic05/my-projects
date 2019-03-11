@@ -1,46 +1,55 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html>
+<head>
+
     <title>Einkaufsliste</title>
-    
-    <link rel="stylesheet" href="./Einkaufsliste_files/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <meta charset=UTF-8">
+    <link rel="stylesheet"   crossorigin="anonymous">
     <style>
 
       body {
   font-family: Castellar, sans-serif;
-  background-color: #CD5C5C;
+  background-color: #862D2D;
   font-size: 27px;
+  
   
 }
 input {
   font-size: 19px;
-  border: 6px ridge #FFFAF0;
-  background-color:#CD5C5C ;
+  border: 4px ridge #FFFAF0;
+  background-color:rgb(93,92,135) ;
 }
 input:hover {
-  background-color: #FFFAF0;
+  background-color:rgb(232,125,145) ;
+  border: 6px ridge #FFFAF0;
+  
 }
 h1 {
-  font-size: 65px;
+  font-size: 68px;
+  color:rgb(255, 255, 255);
+ 
+  rgb(93,92,135)
 }
 #eingabe:hover{
-  background-color:#CD5C5C ;
+  background-color:rgb(232,125,145);
 }
 #box {
   margin-left: auto;
-  margin-right: auto;
+  margin-right: auto ; 
   margin-top: 50px;
   margin-bottom: 50px;
-  border: 23px double #FFFAF0 ;
-  height: 655px;
-  width: 585px;
+  border:#2E8B57  16px double  ;
+  height: 500px;
+  width: 750px;
   padding: 45px;
   text-align: center;
+  background:  url(food.jpg) no-repeat;
 }
 i.ppp {color:#;}
 .ddd {
-  background-color: #CD5C5C;
+  background-color:rgb(93,92,135) ; 
   padding: 15px;
   font-size: 19px;
-  border: 6px ridge;
+  border: 4px ridge;
   cursor: pointer;
   height: 19px;
   width: 20px;
@@ -56,11 +65,11 @@ i.ppp {color:#;}
   position: absolute;
 }
 .dropdown-content input:hover {
-  background-color:#FFFAF0 ;
+  background-color:rgb(232,125,145) ;
 }
 /* Links inside the dropdown */
 .dropdown-content input {
-  background-color: #CD5C5C;
+  background-color:#862D2D ;
   width: 150px;
   color: black;
   padding: 6px 10px;
@@ -135,7 +144,7 @@ function mischen() {
   <body>
     <div id="box">
       <h1>Einkaufsliste</h1>
-      <input type="text" id="eingabe" placeholder="Neues Element">
+      <input type="text" id="eingabe" placeholder="Neues Element" >
       <input type="button" value="Hinzufügen" onclick="hinzufuegen()"><br><br>
       <input type="button" value="Sortieren" onclick="sortieren()">
       <div class="dropdown">

@@ -1,0 +1,61 @@
+body {
+	height: window.innerHeight;
+	width: window.innerWidth;
+	margin: 0;
+	background-image: url("background hd.jpg") ;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center bottom;
+	font-family: Castellar, sans-serif;
+	line-height: 30px;
+	text-align: center;
+	align-items: center;
+	color: white;
+	
+}
+#imp {
+	padding: 60px ;
+	padding-bottom: 30px;
+	width: 870px;
+	height: 600px;
+	background-color: rgba(0, 0, 0, 0.5);
+	border-radius: 4%;
+	border: 8px double white;
+	margin: auto;
+	margin-top: 90px;
+	
+}
+#ena {
+	border: 2px solid;
+	margin: auto;
+	width: 850px;
+	height:100px;
+	border-image: linear-gradient (to right, rgba(0, 0, 0, 0.1), white,rgba(o, o, o, 0.1)) )1 100%;
+	
+}
+ane {
+	height: 50px;
+	width: 0px;
+	border: 1px solid white;
+	margin: auto;
+	
+}
+ana {
+	border: 1px solid white;
+	width: 350px;
+	padding: 20px;
+	margin: auto;
+	
+}
+h1 {
+	font-size: 60px;
+	
+}
+a {
+	font-size: 35px;
+	text-decoration: none;
+	color: white;
+	font-family: Bookman Old Style;
+}
+

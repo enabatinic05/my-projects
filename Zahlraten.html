@@ -1,0 +1,53 @@
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>Zahlraten</title>
+<script>
+
+
+function spiel () {
+var zz = Math.random()*100 + 0.5;
+zz = Math.round (zz);
+var anzahlVersuche = 0 ;
+
+for (var i = 0; i < 1000 ; i += 1){ 
+var rateZahl = prompt ("Rate einen Zahl!");
+anzahlVersuche++;
+if (rateZahl == 70) {
+alert ("Du hast die Zahl erraten! Du hast " + anzahlVersuche + " Versuche gebraucht.");
+break;
+}
+if (rateZahl < 70) {
+alert ("Die Zahl ist zu klein,gib eine größere Zahl ein!" );
+}
+
+if (rateZahl > 70) {
+alert ("Die Zahl ist zu größ,gib eine kleinere Zahl ein!" );
+
+
+}
+}
+}
+
+
+
+
+
+</script>
+
+</head>
+
+
+
+
+
+
+<body>
+<h1>Zahlraten</h1>
+
+<input type="button" value="Jetzt spielen" onclick="spiel()">
+
+</body>
+
+</html>

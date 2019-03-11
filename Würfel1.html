@@ -1,0 +1,96 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Würfelsimultion</title>
+  
+  <style>
+  body {
+  color: white;
+  background-color:#265873 ;
+  text-align: center;
+  font-family:Castellar; 
+  }
+  h1 {
+  font-size: 70px;
+  margin-top: 100px;
+  }
+  input {
+  height: 40px;
+  width: 130px;
+  font-size: 18px;
+  text-align: center;
+  border: 8px double #3B93B0;
+  color: #1E194D;
+  margin: 4px;
+  }
+  eingabe {
+  font-size: 29px;
+  }
+  ausgabe {
+  font-size: 25px;
+  font-family: Bookman Old Style;
+  }
+ 
+  
+  
+  
+  </style>
+
+<script>
+
+function wuerfeln () {
+  var anzahlSechser = 0 ;
+  var anzahlVersuche = parseInt (document.getElementById("eingabe").value) ;
+  anzahlVersuche = parseInt(anzahlVersuche);
+  
+  for (var i = 0; i < anzahlVersuche; i += 1) {
+  var wert = Math.random()*6 + 0.5 ;
+  wert = Math.round (wert) ; 
+  
+  if (wert == 6 ) {
+     anzahlSechser += 1 ;
+	
+  }
+  }
+  var prozent = anzahlSechser/anzahlVersuche*100;
+ var ausgabeText = "Du hast " + anzahlSechser + " einen 6er gewürfelt! (" + anzahlSechser/anzahlVersuche*100 + " %)";
+  
+  document.getElementById("ausgabe").innerHTML = ausgabeText ; 
+  
+  
+ }
+
+
+
+</script>
+</head>
+
+
+
+
+<body>
+ 
+<h1>Würfelsimultion</h1>
+
+ Anzahl der Würfe: <input type="text"  id="eingabe" ><br>
+ 
+<input type="button" value=" Würfeln " onclick="wuerfeln()" >
+
+<p id ="ausgabe"></p>
+ 
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

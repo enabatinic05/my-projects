@@ -1,0 +1,65 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Bildergallerie</title>
+
+  <script>
+  var bilder= ["provansa.jpg", "1provence.jpg", "2provence.jpg", "3provence.jpg"];
+  var index = 0;
+  function nextimage() {
+  index++;
+  if (index >=bilder.length){
+  index=0;
+  }
+  document.getElementById("bild").src=bilder[index];
+  }
+  function previousimage() {
+  index--;
+  if (index<0) {
+  index=4;
+  }
+  document.getElementById("bild").src=bilder[index];
+  }
+  </script>
+  <style>
+  body{
+  color: white;
+  background-color:#2A487E;
+  font-family: Castellar, sans-serif;
+  }
+  h1 {
+  font-size: 60px;
+  padding-bottom: 10px;
+  margin-top: 60px;
+  }
+  button {
+  margin-top: -24%;
+  color: #361234;
+  height:100px;
+  width:100px;
+  border-radius: 100%;
+  font-family:Castellar;
+  font-weight: bold;
+  font-size: 50px;
+  background-color: #361234;
+  border: none;
+  }
+  #button:hover{
+  border: solid 5px white;
+  }
+  
+  
+  </style>
+</head>
+<body>
+<center>
+<div align="center">
+<h1>Bildergallerie</h1>
+<input type="button" id="button" value="<" onclick="nextimage()">
+<img id="bild" height="550" src="provansa.jpg">
+<input type ="button" id="button" value=">" onclick="previousimage()" >
+
+</center>
+</div>
+</body>
+</html>

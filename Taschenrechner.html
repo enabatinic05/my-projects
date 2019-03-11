@@ -1,0 +1,128 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Taschenrechner</title>
+<style>
+body {
+color:#BF4240 ;
+background-color: #D29E79;
+text-align: center;
+font-family: Castellar;
+}
+h1 {
+font-size: 70px;
+margin-top: 85px;
+}
+input {
+height: 35px;
+width: 35px;
+text-align: center;
+border: 5px double #C86B5B;
+background-color:#BF4240 ;
+color: white;
+margin: 3px;
+}     
+input:hover {
+border-color: white;
+}
+#eingabe1 {
+font-size: 22px;
+width: 95px;
+height: 55px;
+}
+#eingabe1:hover {
+border-color: white;
+}
+#eingabe2 {
+font-size: 22px;
+width: 95px;
+height: 55px;
+}
+#eingabe2:hover {
+border-color: white;
+}
+#ausgabe {
+font-size: 35px;
+font-family:Bookman Old Style;
+}
+#border {
+height: 350px;
+max-width: 600px;
+padding: 12px;
+margin:auto;
+border: double;
+border-radius: 4%;
+background-color:#C24E47;
+z-index: -1;
+}
+#box {
+height: 100px;
+max-width: 390px;
+padding:100px;
+padding-bottom: 150px;
+margin: auto;
+border-radius: 5%;
+background-color:white;
+z-index: 1;
+}
+
+</style>
+</head>
+<script>
+
+   function addition() {
+   var wert1 = document.getElementById("eingabe1").value;
+   wert1 = parseInt(wert1);
+   var wert2 = document.getElementById("eingabe2").value;
+   wert2 = parseInt(wert2);
+   var ergebnis1 = wert1 + wert2;
+   document.getElementById("ausgabe").innerHTML=ergebnis1;
+   }
+   function subtraktion() {
+   var wert1 = document.getElementById("eingabe1").value;
+   wert1 = parseInt(wert1);
+   var wert2 = document.getElementById("eingabe2").value;
+   wert2 = parseInt(wert2);
+   var ergebnis2 = wert1 - wert2;
+   document.getElementById("ausgabe").innerHTML=ergebnis2;
+   }
+   function multiplikation() {
+   var wert1 = document.getElementById("eingabe1").value;
+   wert1 = parseInt(wert1);
+   var wert2 = document.getElementById("eingabe2").value;
+   wert2 = parseInt(wert2);
+   var ergebnis3 = wert1 * wert2;
+   document.getElementById("ausgabe").innerHTML=ergebnis3;
+   }
+   function division() {
+   var wert1 = document.getElementById("eingabe1").value;
+   wert1 = parseInt(wert1);
+   var wert2 = document.getElementById("eingabe2").value;
+   wert2 = parseInt(wert2);
+   var ergebnis4 = wert1 / wert2;
+   document.getElementById("ausgabe").innerHTML = ergebnis4;
+   }
+
+
+
+
+
+</script>
+
+
+<body>
+
+<h1>Taschenrechner</h1>
+<div id="border">
+<div id="box">
+<input type="text" id="eingabe1">
+<input type="text" id="eingabe2"><br><br>
+<input type="button" value="+" onclick="addition()">
+<input type="button" value="-" onclick="subtraktion()">
+<input type="button" value="*" onclick="multiplikation()">
+<input type="button" value="/" onclick="division()">
+<br><br>
+<p id="ausgabe"></p>
+</div>
+</body>
+</html>

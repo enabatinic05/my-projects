@@ -3,36 +3,106 @@
 <head>
 <meta charset="utf-8">
 <title>Zahlraten</title>
+
+<style>
+
+  body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  
+  }
+  #beach-image {
+     background-image: url("coolbackground.jpg");
+	 height: 800px;
+	 background-repeat: no-repeat;
+	 background-size: cover;
+	 position: relative;
+     border: none;
+	 
+  }
+  
+  #beach-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 38px;
+  	
+  }
+  input {
+  height: 50px;
+  width: 150px;
+  text-align: center;
+  background-color: black;
+  font-size: 22px;
+  margin: 3px;
+  border: 4px solid  #dd2e72 ;
+  border-radius: 12px;
+  color: white;
+  
+  }
+  input:hover{
+  border-color:#004472 ;
+  }
+  #eingabe:hover{
+  border-color:#004472;
+  }
+  p{
+  font-size: 28px;
+  }
+  #border {
+  position: absolute;
+  padding: 20px;
+	width: 450px;
+	height: 300px;
+    border-radius: 10px;
+  margin-top: 210px;
+  margin-left: 480px;
+  background-image: linear-gradient(to bottom right, #0663A0,#BE96A1 );
+  filter: blur(25px);
+  }
+
+  #box {
+  width: 450px;
+  height: 300px;
+  padding: 20px;
+  background-color:#BE96A1 ;
+position: absolute;
+ margin-top: 210px;
+  margin-left: 480px;
+ border-radius: 10px;
+  }
+
+
+
+</style>
 <script>
 
-
-function spiel () {
-var zz = Math.random()*100 + 0.5;
-zz = Math.round (zz);
+var rateZahl = Math.random()*100 + 0.5;
+rateZahl = Math.round (rateZahl);
 var anzahlVersuche = 0 ;
+function spiel(){
+var eingabe = document.getElementById("eingabe").value;
+eingabe = parseInt(eingabe);
+var ausgabe="";
 
-for (var i = 0; i < 1000 ; i += 1){ 
-var rateZahl = prompt ("Rate einen Zahl!");
-anzahlVersuche++;
-if (rateZahl == 70) {
-alert ("Du hast die Zahl erraten! Du hast " + anzahlVersuche + " Versuche gebraucht.");
-break;
+if (rateZahl < eingabe) {
+anzahlVersuche= anzahlVersuche+1;
+	ausgabe= "Die Zahl ist kleiner";
 }
-if (rateZahl < 70) {
-alert ("Die Zahl ist zu klein,gib eine größere Zahl ein!" );
+if (rateZahl > eingabe) {
+anzahlVersuche= anzahlVersuche+1;
+	ausgabe= "Die Zahl ist größer";
 }
-
-if (rateZahl > 70) {
-alert ("Die Zahl ist zu größ,gib eine kleinere Zahl ein!" );
-
+if (rateZahl == eingabe) {
+ausgabe= "Du hast die Zahl verraten! Du hast " + anzahlVersuche + " Versuche gebraucht.";
+}
+document.getElementById("ausgabe").innerHTML= ausgabe;
 
 }
-}
-}
-
-
-
-
 
 </script>
 
@@ -44,10 +114,17 @@ alert ("Die Zahl ist zu größ,gib eine kleinere Zahl ein!" );
 
 
 <body>
+<div id="beach-image">
+  
+  <div id="border"></div>
+  <div id="box">
+  <div class="beach-text">
 <h1>Zahlraten</h1>
-
+<input type="text" id="eingabe">
 <input type="button" value="Jetzt spielen" onclick="spiel()">
-
+<p id="ausgabe"></p>
+</div>
+</div>
 </body>
 
-</html>
+</html> 
